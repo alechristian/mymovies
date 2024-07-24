@@ -10,6 +10,10 @@
 .history
 .svn/
 assets/.env
+/assets/.env
+.env
+/.env
+assets\.env
 
 
 
