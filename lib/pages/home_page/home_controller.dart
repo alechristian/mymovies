@@ -3,8 +3,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_movies/components/details_movies_dialog.dart';
-import 'package:my_movies/models/movie_details_model.dart';
 import 'package:my_movies/models/movie_search_list_model.dart';
 import 'package:my_movies/repositories/movie_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,9 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class HomeController extends GetxController {
   final MovieRepository repository;
   final favorites = <Results>[].obs;
-  // final listMovies = <Movie>[].obs;
   Rx<MovieSearchList?> listMovies = Rx<MovieSearchList?>(null);
-  // Rx<MovieDetails?> detailsMovie = Rx<MovieDetails?>(null);
   RxList<int> selectedMomentIndex = <int>[].obs;
 
   int selectedIndex = 0;
@@ -36,35 +32,6 @@ class HomeController extends GetxController {
     }
     update();
   }
-
-  // // realiza a busca dos detalhes do filme com base no id
-  // Future<void> getDetailsMovie(String id) async {
-  //   try {
-  //     final response = await repository.getDetailsMovie(id);
-  //     detailsMovie.value = response;
-  //     update();
-  //   } catch (e) {
-  //     log(e.toString());
-  //   }
-  //   update();
-  // }
-
-  // abre o dialog com os detalhes do filme - logo após a busca dos detalhes
-  // void openDialogDetails(String id) {
-  //   isLoading(true);
-  //   getDetailsMovie(id).whenComplete(() {
-  //     Get.dialog(
-  //       MovieDialog(
-  //         title: detailsMovie.value!.title.toString(),
-  //         year: detailsMovie.value!.year.toString(),
-  //         description: detailsMovie.value!.plotOverview.toString(),
-  //         score: detailsMovie.value!.userRating.toString(),
-  //         whereToWatch: detailsMovie.value!.networkNames.toString(),
-  //       ),
-  //     );
-  //     isLoading(false);
-  //   });
-  // }
 
   // adiciona o filme aos favoritos
   void addToFavorites(Results movie) {

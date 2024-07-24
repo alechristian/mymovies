@@ -73,7 +73,7 @@ class HomeView extends StatelessWidget {
                                   subtitle: Text(controller
                                       .listMovies.value!.results![index].type!),
                                   trailing: IconButton(
-                                    icon: Icon(Icons.favorite,
+                                    icon: const Icon(Icons.favorite,
                                         color:AppColors.grey),
                                     onPressed: () {
                                       controller.addToFavorites(controller
