@@ -52,4 +52,4 @@ flutter run
 
 ### Observações Importantes
 
-- **Proteção da API Key**: A chave da API (`api_key`) utilizada neste projeto está protegida e não é exposta diretamente no código. Utilizamos variáveis de ambiente para gerenciar a `api_key` de forma segura. 
+- **Proteção da API Key**: A chave da API (`api_key`) utilizada neste projeto está protegida e não é exposta diretamente no código. Utilizamos variáveis de ambiente para gerenciar a `api_key` de forma segura. Deverá ser incluido um arquivo .env na pasta assets seguindo a seguinte estrutura: API_KEY =  "minha-chave"
